@@ -309,12 +309,12 @@
 
 
 @media (width < 1024px) {
+
   .header {
     --cover-image: url(../images/cover-image-dark.png);
   }
 
   .decorated-zone { 
-
     block-size: 1024px;
   }
 
@@ -361,7 +361,6 @@
   }
 
   .decorated-zone { 
-
     block-size: clamp(41.75rem, 28.894rem + 54.854vw, 64rem);
   }
 
