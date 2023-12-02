@@ -52,7 +52,7 @@
 }
 
 @media (width < 1024px) {
-  .page.theme_light .header{
+  .header {
      --cover-image: url(../images/cover-image-light.png);
   }
 }
@@ -65,6 +65,7 @@
 
 @media (prefers-color-scheme: light) {
   :root {
+
         /* Дублируем переменные светлой темы */  
 
         --bg-color: #FFF1F7;

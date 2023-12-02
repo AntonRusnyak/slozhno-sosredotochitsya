@@ -314,8 +314,10 @@
   }
 
   .decorated-zone { 
+
     block-size: 1024px;
   }
+
   .header__theme-menu {
     justify-self: end;
     grid-area: 3 / 12 / 6 / 13;
@@ -359,6 +361,7 @@
   }
 
   .decorated-zone { 
+
     block-size: clamp(41.75rem, 28.894rem + 54.854vw, 64rem);
   }
 
@@ -380,7 +383,8 @@
     bottom: 8px;
   }
 
-  .psevdo { 
+  .psevdo {
+
     top: 10px;
     right: 38px;
   }
