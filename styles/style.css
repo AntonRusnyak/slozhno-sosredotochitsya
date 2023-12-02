@@ -5,6 +5,7 @@
   margin: 0 auto;
   max-inline-size: 1024px;
   background-color: var(--bg-color);
+  background-attachment: fixed
 }
 
 .header {

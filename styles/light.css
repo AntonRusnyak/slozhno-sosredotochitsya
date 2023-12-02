@@ -5,7 +5,8 @@
 */
 
 :root.theme-light {
-    /* Переменные светлой темы */  
+/* Переменные светлой темы */
+
 }
 
 .page.theme_light {
@@ -13,6 +14,7 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+
     --bg-color: #FFF1F7;
     --nav-color: #353430;
     --opacity-nav-color: #35343099;
@@ -50,10 +52,8 @@
 }
 
 @media (width < 1024px) {
-  .page.theme_light {
-    .header {
+  .page.theme_light .header{
      --cover-image: url(../images/cover-image-light.png);
-    }
   }
 }
 
@@ -66,6 +66,7 @@
 @media (prefers-color-scheme: light) {
   :root {
         /* Дублируем переменные светлой темы */  
+
         --bg-color: #FFF1F7;
         --nav-color: #353430;
         --opacity-nav-color: #35343099;
@@ -74,5 +75,5 @@
         --text: #353430;
         --top-text: #353430;
         --cover-image: url(../images/cover-image-light.png);
-    }
+  }
 }
