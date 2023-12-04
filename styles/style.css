@@ -1,32 +1,27 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  margin: 0 auto;
-  max-inline-size: 1024px;
-  background-color: var(--bg-color);
-  background-attachment: fixed
-}
 
-.header {
+  background-color: var(--bg-color);
   background-image: var(--cover-image);
-  margin-block-end: 60px;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .decorated-zone {
-  block-size: 768px;
+  margin: 0 auto;
   padding: var(--indent);
+  block-size: 100vh;
   display: grid;
-  grid-template-rows: repeat(12 , 1fr);
-  grid-template-columns: repeat(12 , 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   position: relative;
 }
 
 .decorated-zone::before {
-  content: '';
+  content: "";
   inline-size: 25px;
   block-size: 25px;
   border-block-start: 1px solid var(--nav-color);
@@ -36,7 +31,7 @@
 }
 
 .decorated-zone::after {
-  content: '';
+  content: "";
   inline-size: 25px;
   block-size: 25px;
   border-block-end: 1px solid var(--nav-color);
@@ -47,12 +42,13 @@
 
 .header__theme-menu {
   justify-self: center;
-  grid-area: 1 / 5 / 2 / 11 ;
+  grid-area: 1 / 5 / 2 / 11;
+  margin: -2px 0 0 0;
 }
 
 .header__theme-menu-list {
   display: grid;
-  grid-template-columns: repeat(3, 70px);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
@@ -60,8 +56,6 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  inline-size: 70px;
-  block-size: 26px;
 }
 
 .header__theme-menu-button {
@@ -69,7 +63,7 @@
   background-color: transparent;
   border: none;
   color: var(--nav-color);
-  font-family: IBM Plex Mono , Arial, Helvetica, sans-serif;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -78,7 +72,7 @@
   block-size: 26px;
 }
 
-.header__theme-menu-button:hover:not(.header__theme-menu-button_type_dark) {
+.header__theme-menu-button:hover {
   outline: 1px solid var(--opacity-nav-color);
 }
 
@@ -88,25 +82,22 @@
 }
 
 .header__theme-menu-button_type_light {
-  outline: none;
+  outline: 1px solid var(--button-type-light);
 }
-
 .header__theme-menu-button_active {
   pointer-events: none;
 }
 
 .header__theme-menu-button_type_dark {
-  outline: 1px solid var(--nav-color);
+  outline: 1px solid var(--button-type-dark);
 }
 
 .psevdo {
-  inline-size: 33px;
-  block-size: 26px;
   position: absolute;
   top: 20px;
   right: 48px;
   color: var(--nav-color);
-  font-family: IBM Plex Mono , Arial, Helvetica, sans-serif;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -114,12 +105,12 @@
 }
 
 .psevdo::after {
-  content: '';
+  content: "";
   inline-size: 9px;
   block-size: 9px;
   position: absolute;
   top: 8px;
-  border-radius: 50% ;
+  border-radius: 50%;
   margin-inline-start: 10px;
   background-color: var(--nav-color);
   fill: var(--nav-color);
@@ -127,24 +118,22 @@
 }
 
 .title {
-  font-size:clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   color: var(--title-color);
   text-shadow: 4px 4px 0px var(--under-title-color);
-  font-family: IBM Plex Mono , Arial, Helvetica, sans-serif;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 129.525px */
-  position: relative;
-  left: -20px;
-  bottom: -10px;
   grid-area: 6 / 1 / 8 / 13;
   align-self: end;
+  margin: 0 0 -6px -20px;
 }
 
 .title-decor {
   color: var(--top-text);
   background-color: var(--under-color);
-  font-family: IBM Plex Mono , Arial, Helvetica, sans-serif;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -155,28 +144,29 @@
   inline-size: clamp(22.75rem, -1.063rem + 49.609vw, 30.688rem);
   grid-area: 10 / 9 / 11 / 13;
   justify-self: end;
-  position: relative;
-  bottom: -5px;
+  margin: 0 0 -6px 0;
 }
 
 .main {
   padding: 0 var(--indent);
   max-inline-size: 1024px;
+  margin: 0 auto;
 }
 
 .section {
   margin-block-end: 80px;
 }
 
-.section-red {
+.section-start {
   display: grid;
   grid-template-columns: clamp(14.75rem, -0.063rem + 30.859vw, 19.688rem) 1fr;
   gap: 20px;
+  margin: 60px 0 80px 0;
 }
 
 .title-two {
   color: var(--nav-color);
-  font-family: IBM Plex Mono , Arial, Helvetica, sans-serif;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -184,7 +174,7 @@
   inline-size: clamp(14.75rem, -0.063rem + 30.859vw, 19.688rem);
 }
 
-.list-section-red {
+.list-section-start {
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -198,46 +188,46 @@
 
 .text {
   color: var(--text);
-  font-family: IBM Plex Mono , Arial, Helvetica, sans-serif;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 23.4px; /* 130% */
 }
 
-.a-section {
+.link-section {
   text-shadow: 2px 2px 0 var(--under-color);
   text-decoration: none;
 }
 
-.a-section:hover {
+.link-section:hover {
   border-bottom: 1px solid var(--text);
 }
 
-.a-section:focus-visible {
+.link-section:focus-visible {
   outline: 1px solid var(--text);
   outline-offset: -1px;
 }
 
-.section-green {
+.section-three-column {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.list-section-green {
+.list-section-three-column {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
 
-.section-blue {
+.section-main {
   display: grid;
   grid-template-columns: clamp(14.75rem, -0.063rem + 30.859vw, 19.688rem) 1fr;
   gap: 20px;
 }
 
-.list-section-blue {
+.list-section-main {
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -247,7 +237,7 @@
   font-weight: 400;
 }
 
-.section-white {
+.section-image {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -256,7 +246,7 @@
 
 .img-library {
   display: grid;
-  grid-template-columns: repeat(3 , clamp(14.313rem, -1.813rem + 33.594vw, 19.688rem)) ;
+  grid-template-columns: repeat(3, clamp(14.313rem, -1.813rem + 33.594vw, 19.688rem));
   grid-template-rows: clamp(12rem, -0.75rem + 26.563vw, 16.25rem) clamp(14.375rem, -1.563rem + 33.203vw, 19.688rem) clamp(19.875rem, -0.75rem + 42.969vw, 26.75rem);
   gap: 20px;
   justify-items: center;
@@ -293,9 +283,9 @@
 }
 
 .title-footer {
-  font-size:clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   color: var(--title-color);
-  font-family: IBM Plex Mono , Arial, Helvetica, sans-serif;
+  font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 129.525px */
@@ -303,125 +293,107 @@
   align-self: end;
   justify-self: center;
   text-shadow: 2px 1px 0px var(--under-title-color);
-  position: relative;
-  bottom: -4px;
-  right: -1px;
+  margin: 0 0 -5px 0;
 }
 
-
 @media (width < 1024px) {
-  .header {
-    --cover-image: url(../images/cover-image-dark.png);
-  }
-
-  .decorated-zone {
-    block-size: 1024px;
-  }
 
   .header__theme-menu {
-    justify-self: end;
-    grid-area: 3 / 12 / 6 / 13;
-    position: relative;
-    bottom: -13px;
+      justify-self: end;
+      grid-area: 3 / 12 / 6 / 13;
+      margin: 13px 0 0 0;
   }
 
   .title {
-   bottom: 10px;
+      margin: 0 0px 6px -20px;
   }
 
   .title-one {
-   bottom: 4px;
+      margin: 0 0 6px 0;
   }
 
   .header__theme-menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
   }
 
-  .list-section-green {
-    display: flex;
-    flex-direction: column;
+  .list-section-three-column {
+      display: flex;
+      flex-direction: column;
   }
 
   .title-footer {
-    top: -31px;
-    bottom: 0px;
-    right: -1px;
+      margin: 0 0 32px 0;
   }
 }
 
 @media (width < 768px) {
-  :root {
-    --indent: 10px;
+  .page {
+      --indent: 10px;
   }
 
   .header {
-    margin-block-end: 40px;
-  }
-
-  .decorated-zone {
-    block-size: clamp(41.75rem, 28.894rem + 54.854vw, 64rem);
+      margin-block-end: 40px;
   }
 
   .header__theme-menu {
-    grid-area: 3 / 11 / 6 / 13;
-    bottom: 34px;
+      grid-area: 3 / 11 / 6 / 13;
+      margin: -32px 0 0 0;
   }
 
   .title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    grid-area: 8 / 1 / 10 / 13;
-    left: 0;
-    bottom: 14px;
+      font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+      grid-area: 8 / 1 / 10 / 13;
+      margin: 0 0 8px 0;
   }
 
   .title-one {
-    inline-size:  clamp(22.188rem, 21.651rem + 2.29vw, 22.75rem);
-    grid-area: 11/ 1 / 12 / 13;
-    bottom: 8px;
+      inline-size: clamp(22.188rem, 21.651rem + 2.29vw, 22.75rem);
+      grid-area: 11/ 1 / 12 / 13;
+      margin: 0 0 8px 0;
   }
 
   .psevdo {
-    top: 10px;
-    right: 38px;
+      top: 10px;
+      right: 38px;
   }
 
   .section {
-    margin-block-end: 50px;
+      margin-block-end: 50px;
   }
-  
-  .section-red {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+
+  .section-start {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 40px 0 50px 0;
   }
 
   .title-two {
-    inline-size: 355px;
+      inline-size: 355px;
   }
 
-  .section-blue {
-    display: flex;
-    flex-direction: column;
+  .section-main {
+      display: flex;
+      flex-direction: column;
   }
 
-  .section-white {
-    gap: 10px;
-    margin-block-end: 40px;
+  .section-image {
+      gap: 10px;
+      margin-block-end: 40px;
   }
 
   .img-library {
-    display: block;
+      display: block;
   }
 
   .img-in:not(:last-child) {
-    margin-block-end: 10px;
+      margin-block-end: 10px;
   }
 
   .title-footer {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    top: -5px;
-    bottom: 0px;
+      font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+      margin: 0 0 5px 0;
   }
 }
