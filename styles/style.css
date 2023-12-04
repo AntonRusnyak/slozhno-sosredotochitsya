@@ -1,7 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-
   background-color: var(--bg-color);
   background-image: var(--cover-image);
   background-attachment: fixed;
@@ -74,6 +73,7 @@
 
 .header__theme-menu-button:hover {
   outline: 1px solid var(--opacity-nav-color);
+  cursor: pointer;
 }
 
 .header__theme-menu-button:focus-visible {
