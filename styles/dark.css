@@ -25,9 +25,39 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --bg-color: #000028;
+  --nav-color: #ff0070;
+  --opacity-nav-color: #ff007099;
+  --title-color: #db00ff;
+  --under-title-color: #ff0070;
+  --under-color: #ff0070;
+  --text: #f1b2ce;
+  --top-text: #000028;
+  --indent: 20px;
+  --cover-image: url(../images/cover-image.png);
+  --button-type-dark: #ff0070;
+  --button-type-light: transparent;
 }
+
 @media (width < 1024px) {
   .page {
       --cover-image: url(../images/cover-image-dark.png);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000028;
+    --nav-color: #ff0070;
+    --opacity-nav-color: #ff007099;
+    --title-color: #db00ff;
+    --under-title-color: #ff0070;
+    --under-color: #ff0070;
+    --text: #f1b2ce;
+    --top-text: #000028;
+    --indent: 20px;
+    --cover-image: url(../images/cover-image.png);
+    --button-type-dark: #ff0070;
+    --button-type-light: transparent;
   }
 }
