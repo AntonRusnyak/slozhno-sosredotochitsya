@@ -3,6 +3,7 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-color: var(--bg-color);
   background-image: var(--cover-image);
+  background-blend-mode: soft-light;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,7 +12,8 @@
 
 .decorated-zone {
   margin: 0 auto;
-  padding: var(--indent);
+  padding: 20px;
+  min-block-size: 668px;
   block-size: 100vh;
   display: grid;
   grid-template-rows: repeat(12, 1fr);
@@ -42,7 +44,6 @@
 .header__theme-menu {
   justify-self: center;
   grid-area: 1 / 5 / 2 / 11;
-  margin: -2px 0 0 0;
 }
 
 .header__theme-menu-list {
@@ -80,10 +81,11 @@
   outline: none;
   border-bottom: 1px solid var(--nav-color);
 }
-
+/*без стилизации по _type_dark или _type_light нельзя сделать обводку в дефолтном состоянии.*/
 .header__theme-menu-button_type_light {
   outline: 1px solid var(--button-type-light);
 }
+
 .header__theme-menu-button_active {
   pointer-events: none;
 }
@@ -96,7 +98,7 @@
   position: absolute;
   top: 20px;
   right: 48px;
-  color: var(--nav-color);
+  color: var( --button-type-dark);
   font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-style: normal;
@@ -112,9 +114,9 @@
   top: 8px;
   border-radius: 50%;
   margin-inline-start: 10px;
-  background-color: var(--nav-color);
-  fill: var(--nav-color);
-  filter: drop-shadow(0px 0px 4px var(--nav-color));
+  background-color: var( --button-type-dark);
+  fill: var( --button-type-dark);
+  filter: drop-shadow(0px 0px 4px var( --button-type-dark));
 }
 
 .title {
@@ -127,7 +129,7 @@
   line-height: 82.5%; /* 129.525px */
   grid-area: 6 / 1 / 8 / 13;
   align-self: end;
-  margin: 0 0 -6px -20px;
+  margin: 0 0 -27px -20px;
 }
 
 .title-decor {
@@ -143,12 +145,11 @@
 .title-one {
   inline-size: clamp(22.75rem, -1.063rem + 49.609vw, 30.688rem);
   grid-area: 10 / 9 / 11 / 13;
-  justify-self: end;
-  margin: 0 0 -6px 0;
+  margin: 27px 0 0 0;
 }
 
 .main {
-  padding: 0 var(--indent);
+  padding: 0 20px;
   max-inline-size: 1024px;
   margin: 0 auto;
 }
@@ -227,6 +228,12 @@
   gap: 20px;
 }
 
+.block-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .list-section-main {
   display: flex;
   gap: 20px;
@@ -289,14 +296,15 @@
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 129.525px */
-  grid-area: 3/ 4 / 8 / 10;
-  align-self: end;
-  justify-self: center;
+  grid-area: 6/ 4 / 12 / 12;
   text-shadow: 2px 1px 0px var(--under-title-color);
-  margin: 0 0 -5px 0;
+  margin: 0px 0 0px 11px;
 }
 
 @media (width < 1024px) {
+  .page {
+    background-blend-mode: normal;
+  }
 
   .header__theme-menu {
       justify-self: end;
@@ -324,13 +332,13 @@
   }
 
   .title-footer {
-      margin: 0 0 32px 0;
+      margin: 35px 0 0px 2px;
   }
 }
 
 @media (width < 768px) {
-  .page {
-      --indent: 10px;
+  .decorated-zone {
+    padding: 10px;
   }
 
   .header {
@@ -338,8 +346,8 @@
   }
 
   .header__theme-menu {
-      grid-area: 3 / 11 / 6 / 13;
-      margin: -32px 0 0 0;
+      grid-area: 2 / 11 / 6 / 13;
+      margin: 16px 0 0 0;
   }
 
   .title {
@@ -357,6 +365,10 @@
   .psevdo {
       top: 10px;
       right: 38px;
+  }
+
+  .main {
+    padding: 0 10px;
   }
 
   .section {
@@ -394,6 +406,8 @@
 
   .title-footer {
       font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-      margin: 0 0 5px 0;
+      margin: 9px 0 0 0;
+      justify-self: center;
+      grid-area: 6/ 1 / 12 / 13;
   }
 }

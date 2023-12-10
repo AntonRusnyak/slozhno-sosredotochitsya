@@ -35,12 +35,6 @@
   --button-type-light: #353430;
 }
 
-@media (width <= 768px) {
-  .page.theme_light {
-      --under-title-color: #FF8DCB;
-  }
-}
-
 .page.theme_light .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -48,6 +42,12 @@
   height: 1px;
   overflow: hidden;
   white-space: nowrap;
+}
+
+@media (width <= 768px) {
+  .page.theme_light {
+      --under-title-color: #FF8DCB;
+  }
 }
 
 @media (prefers-color-scheme: light) {
