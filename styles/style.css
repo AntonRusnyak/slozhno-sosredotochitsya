@@ -90,7 +90,7 @@
   position: absolute;
   top: 20px;
   right: 48px;
-  color: var( --nav-color);
+  color: var(--nav-color);
   font-family: IBM Plex Mono, Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-style: normal;

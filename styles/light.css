@@ -52,4 +52,8 @@
       --top-text: #353430;
       --cover-image: url(../images/cover-image-light.png);
   }
+
+  .page.theme_auto .psevdo {
+    display: none;
+  }
 }
